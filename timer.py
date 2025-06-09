@@ -4,12 +4,10 @@ import threading
 import tkinter as tk
 from tkinter import simpledialog
 
-# 긴박한 느낌의 무한 알람 반복
 def long_beep(stop_event):
     while not stop_event.is_set():
-        # 다급한 시스템 사운드 사용
         winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
-        if stop_event.wait(0.05):  # 간격 줄여서 다급함 UP
+        if stop_event.wait(0.05): 
             break
 
 def start_timer(root, minutes, seconds):
